@@ -17,7 +17,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-white pt-16 md:pt-20 pb-10 border-t border-zinc-100">
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24">
+      <div className="section-padding-x">
         
         {/* Top Footer Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16">
