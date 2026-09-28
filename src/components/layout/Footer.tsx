@@ -26,14 +26,15 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col justify-between max-w-md">
             <div>
               {/* ByteSpace Dark Logo */}
-              <Link href="/" className="inline-flex items-center gap-2 mb-6">
-                <svg className="w-8 h-8" viewBox="0 0 32 32" fill="none">
-                  <rect width="32" height="32" rx="8" fill="#CBFC01" />
-                  <path d="M12 9V23L23 16L12 9Z" fill="#003BE2" />
-                </svg>
-                <span className="text-[#171717] font-poppins font-bold text-2xl tracking-tight">
-                  ByteSpace
-                </span>
+              <Link href="/" className="inline-block mb-6">
+                <div className="relative h-8 w-36 sm:w-40">
+                  <Image
+                    src="/logos/footerlogo.png"
+                    alt="ByteSpace"
+                    fill
+                    className="object-contain object-left"
+                  />
+                </div>
               </Link>
 
               {/* Newsletter Title */}
