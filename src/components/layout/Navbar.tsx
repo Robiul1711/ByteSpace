@@ -5,6 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShoppingBag, Menu, X, ChevronRight, Home, BookOpen, Users } from "lucide-react";
 
+import ThemeToggle from "@/components/common/ThemeToggle";
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -45,7 +47,7 @@ export default function Navbar() {
           <nav
             className={`w-full flex items-center justify-between transition-all duration-300 ${
               scrolled
-                ? "bg-[#002FB5]/90 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.25)] rounded-full px-5 sm:px-7 py-3"
+                ? "bg-[#002FB5]/90 dark:bg-[#060B1E]/90 backdrop-blur-xl shadow-[0_12px_36px_rgba(0,0,0,0.25)] rounded-full px-5 sm:px-7 py-3 border-0"
                 : "py-6 bg-transparent"
             }`}
           >
@@ -85,7 +87,10 @@ export default function Navbar() {
             </div>
 
             {/* Right Actions */}
-            <div className="hidden md:flex items-center gap-6 lg:gap-7">
+            <div className="hidden md:flex items-center gap-5 lg:gap-6">
+              {/* Theme Toggle Button */}
+              <ThemeToggle />
+
               <Link
                 href="/login"
                 className="text-white text-sm font-medium hover:text-[#CBFC01] transition-colors"
@@ -108,7 +113,8 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu toggle */}
-            <div className="flex items-center gap-2.5 md:hidden">
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
               <button
                 type="button"
                 aria-label="Cart"

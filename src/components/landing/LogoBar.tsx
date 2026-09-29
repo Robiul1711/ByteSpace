@@ -44,7 +44,7 @@ export default function LogoBar() {
   const currentLogos = logoSets[currentSetIndex];
 
   return (
-    <section className="w-full bg-[#F5F5F6] py-8 sm:py-10 md:py-12 border-b border-zinc-200/60 overflow-hidden relative">
+    <section className="w-full bg-[#F5F5F6] dark:bg-[#080B12] py-8 sm:py-10 md:py-12 border-b border-zinc-200/60 dark:border-zinc-800/60 overflow-hidden relative transition-colors duration-300">
       <div className="max-container section-padding-x">
         <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 sm:gap-10 md:gap-14 [perspective:1000px]">
           {currentLogos.map((brand, index) => (
@@ -88,7 +88,7 @@ export default function LogoBar() {
                     src={brand.src}
                     alt={brand.alt}
                     fill
-                    className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300 opacity-75 hover:opacity-100"
+                    className="object-contain filter grayscale hover:grayscale-0 dark:brightness-125 transition-all duration-300 opacity-75 hover:opacity-100"
                     priority
                   />
                 </motion.div>

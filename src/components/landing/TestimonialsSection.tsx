@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white section-padding-y">
+    <section className="relative w-full overflow-hidden bg-white dark:bg-[#07090E] section-padding-y transition-colors duration-300">
       {/* 1. Left Gradient Glow (Figma exact) */}
       <div
         aria-hidden="true"
@@ -77,13 +77,13 @@ export default function TestimonialsSection() {
         {/* Top Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-10 mb-12 sm:mb-16">
           <div className="w-full lg:max-w-[577px]">
-            <h2 className="text-[#000] font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px]">
+            <h2 className="text-[#000] dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px]">
               Discover What Our <br className="hidden sm:inline" />
               Community Is Saying
             </h2>
           </div>
           <div className="w-full lg:max-w-[580px]">
-            <p className="text-[#4F4F4F] font-satoshi font-normal text-base lg:text-[18px] leading-[160%]">
+            <p className="text-[#4F4F4F] dark:text-zinc-400 font-satoshi font-normal text-base lg:text-[18px] leading-[160%]">
               At ByteSpace, our vibrant community of learners and creators is at
               the heart of what we do. Hear directly from those who have
               experienced the transformative journey of learning and creating on
@@ -98,11 +98,11 @@ export default function TestimonialsSection() {
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-[24px] p-6 sm:p-8 border border-[#E9EBEF]/80 shadow-[0_4px_24px_rgba(0,0,0,0.02)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+              className="bg-white dark:bg-[#0C101A] rounded-[24px] p-6 sm:p-8 border border-[#E9EBEF]/80 dark:border-zinc-800/80 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* User Avatar */}
-                <div className="relative w-14 h-14 rounded-full overflow-hidden mb-5 shrink-0">
+                <div className="relative w-14 h-14 rounded-full overflow-hidden mb-5 shrink-0 border border-zinc-100 dark:border-zinc-800">
                   <Image
                     src={item.avatar}
                     alt={item.name}
@@ -113,17 +113,17 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Author Name */}
-                <h3 className="text-[#000] font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.2px]">
+                <h3 className="text-[#000] dark:text-white font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.2px]">
                   {item.name}
                 </h3>
 
                 {/* Subtitle / Role */}
-                <p className="text-[#003BE2] font-satoshi font-normal text-base sm:text-[18px] leading-[160%] mt-1 mb-5">
+                <p className="text-[#003BE2] dark:text-[#6E95FF] font-satoshi font-normal text-base sm:text-[18px] leading-[160%] mt-1 mb-5">
                   {item.role}
                 </p>
 
                 {/* Testimonial Quote */}
-                <p className="text-[#4F4F4F] font-satoshi font-normal text-base sm:text-[18px] leading-[160%]">
+                <p className="text-[#4F4F4F] dark:text-zinc-300 font-satoshi font-normal text-base sm:text-[18px] leading-[160%]">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>

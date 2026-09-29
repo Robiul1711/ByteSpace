@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "@/components/common/ThemeToggle";
 
 export default function LoginPage() {
   const [formData, setFormData] = useState({
@@ -16,12 +17,12 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-hero-grid text-white flex flex-col justify-between relative overflow-hidden pb-12">
-      {/* Top Header Logo - Aligned exactly like Navbar */}
+    <main className="min-h-screen w-full bg-hero-grid text-white flex flex-col justify-between relative overflow-hidden pb-12 transition-colors duration-300">
+      {/* Top Header Logo & Theme Toggle */}
       <header className="w-full relative z-50">
-        <div className="max-container section-padding-x py-6 flex items-center">
+        <div className="max-container section-padding-x py-6 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="relative h-8 w-36 sm:w-40">
+            <div className="relative h-8 w-36 sm:w-40 transition-transform active:scale-95">
               <Image
                 src="/logos/Header_Logo.png"
                 alt="ByteSpace"
@@ -31,6 +32,7 @@ export default function LoginPage() {
               />
             </div>
           </Link>
+          <ThemeToggle />
         </div>
       </header>
 
@@ -62,12 +64,12 @@ export default function LoginPage() {
 
           {/* Right Column: Login Card */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[500px] bg-white text-zinc-900 rounded-[28px] sm:rounded-[36px] p-8 sm:p-12 shadow-2xl flex flex-col">
+            <div className="w-full max-w-[500px] bg-white dark:bg-[#0C101C]/95 dark:backdrop-blur-xl text-zinc-900 dark:text-zinc-100 rounded-[28px] sm:rounded-[36px] p-8 sm:p-12 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-transparent dark:border-zinc-800/80 flex flex-col transition-all">
               {/* Header */}
-              <span className="font-satoshi font-medium text-sm sm:text-base text-[#003BE2]">
+              <span className="font-satoshi font-medium text-sm sm:text-base text-[#003BE2] dark:text-[#CBFC01]">
                 Sign In
               </span>
-              <h2 className="font-poppins font-bold text-3xl sm:text-[38px] leading-[1.15] text-[#0A0D14] mt-1 mb-8">
+              <h2 className="font-poppins font-bold text-3xl sm:text-[38px] leading-[1.15] text-[#0A0D14] dark:text-white mt-1 mb-8">
                 Welcome Back
               </h2>
 
@@ -77,7 +79,7 @@ export default function LoginPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="email"
-                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] mb-1.5"
+                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] dark:text-zinc-300 mb-1.5"
                   >
                     Email
                   </label>
@@ -90,7 +92,7 @@ export default function LoginPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 text-sm font-normal text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#003BE2] focus:ring-2 focus:ring-[#003BE2]/10 transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-[#003BE2] dark:focus:border-[#CBFC01] focus:ring-2 focus:ring-[#003BE2]/10 dark:focus:ring-[#CBFC01]/15 transition-all"
                   />
                 </div>
 
@@ -98,7 +100,7 @@ export default function LoginPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="password"
-                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] mb-1.5"
+                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] dark:text-zinc-300 mb-1.5"
                   >
                     Password
                   </label>
@@ -111,7 +113,7 @@ export default function LoginPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, password: e.target.value })
                     }
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 text-sm font-normal text-zinc-800 placeholder:text-zinc-400 outline-none focus:border-[#003BE2] focus:ring-2 focus:ring-[#003BE2]/10 transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-[#003BE2] dark:focus:border-[#CBFC01] focus:ring-2 focus:ring-[#003BE2]/10 dark:focus:ring-[#CBFC01]/15 transition-all"
                   />
                 </div>
 
@@ -128,8 +130,8 @@ export default function LoginPage() {
 
               {/* Divider */}
               <div className="relative my-8 flex items-center justify-center">
-                <div className="w-full border-t border-zinc-200" />
-                <span className="absolute bg-white px-3 text-xs sm:text-sm lg:text-base xl:text-lg font-satoshi text-zinc-400">
+                <div className="w-full border-t border-zinc-200 dark:border-zinc-800" />
+                <span className="absolute bg-white dark:bg-[#0C101C] px-3 text-xs sm:text-sm lg:text-base font-satoshi text-zinc-400 dark:text-zinc-500">
                   or
                 </span>
               </div>
@@ -140,10 +142,10 @@ export default function LoginPage() {
                 <button
                   type="button"
                   aria-label="Sign in with Facebook"
-                  className="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-50 transition-colors cursor-pointer"
+                  className="w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-700/70 bg-white dark:bg-[#141A29] flex items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-800 text-black dark:text-white transition-colors cursor-pointer"
                 >
                   <svg
-                    className="w-5 h-5 text-black"
+                    className="w-5 h-5 text-zinc-900 dark:text-white"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -155,10 +157,10 @@ export default function LoginPage() {
                 <button
                   type="button"
                   aria-label="Sign in with Google"
-                  className="w-12 h-12 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-50 transition-colors cursor-pointer"
+                  className="w-12 h-12 rounded-full border border-zinc-200 dark:border-zinc-700/70 bg-white dark:bg-[#141A29] flex items-center justify-center hover:bg-zinc-50 dark:hover:bg-zinc-800 text-black dark:text-white transition-colors cursor-pointer"
                 >
                   <svg
-                    className="w-5 h-5 text-black font-bold"
+                    className="w-5 h-5 text-zinc-900 dark:text-white"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >
@@ -168,11 +170,11 @@ export default function LoginPage() {
               </div>
 
               {/* Bottom Signup Link */}
-              <div className="mt-10 text-center font-satoshi text-xs sm:text-sm text-[#525866]">
+              <div className="mt-10 text-center font-satoshi text-xs sm:text-sm text-[#525866] dark:text-zinc-400">
                 New user?{" "}
                 <Link
                   href="/signup"
-                  className="text-[#003BE2] font-semibold hover:underline"
+                  className="text-[#003BE2] dark:text-[#CBFC01] font-semibold hover:underline"
                 >
                   Create an account
                 </Link>

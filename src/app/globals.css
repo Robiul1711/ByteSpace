@@ -1,6 +1,8 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400,300&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-satoshi: 'Satoshi', sans-serif;
   --font-poppins: var(--font-poppins), sans-serif;
@@ -17,6 +19,7 @@
 body {
   font-family: var(--font-satoshi), sans-serif;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Responsive Section Padding Utilities */
@@ -70,13 +73,24 @@ body {
   width: 100%;
 }
 
-/* Blueprint Grid Background with #003BE2 */
+/* Blueprint Grid Background - Light: Electric Royal Blue (#003BE2) | Dark: Deep Midnight Navy (#050B1E) */
 .bg-hero-grid {
   background-color: #003BE2;
   background-image: 
     linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
   background-size: 76px 76px;
+  transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.dark .bg-hero-grid,
+:where(.dark, .dark *) .bg-hero-grid {
+  background-color: #050B1E;
+  background-image: 
+    linear-gradient(rgba(80, 130, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 130, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 59, 226, 0.28) 0%, transparent 80%);
+  background-size: 76px 76px, 76px 76px, 100% 100%;
 }
 
 
