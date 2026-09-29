@@ -12,7 +12,7 @@ const brandLogos = [
 export default function LogoBar() {
   return (
     <section className="w-full bg-[#F5F5F6] py-8 sm:py-10 md:py-12 border-b border-zinc-200/60">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="max-container section-padding-x">
         <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 sm:gap-10 md:gap-14">
           {brandLogos.map((brand) => (
             <div

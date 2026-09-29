@@ -12,6 +12,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "ByteSpace - Modern Digital Innovation & Tech Solutions",
   description: "ByteSpace builds cutting-edge web and software experiences with modern engineering and design.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

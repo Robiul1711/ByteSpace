@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full relative z-50">
-      <nav className="section-padding-x py-6 flex items-center justify-between">
+      <nav className="max-container section-padding-x py-6 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <div className="relative h-8 w-36 sm:w-40">
