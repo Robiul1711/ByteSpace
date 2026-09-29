@@ -17,7 +17,7 @@ const checkListItems = [
 
 export default function FeaturesSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white py-20 sm:py-28 lg:py-36">
+    <section className="relative w-full overflow-hidden bg-white dark:bg-[#07090E] py-20 sm:py-28 lg:py-36 transition-colors duration-300">
       {/* ================= 5 RADIAL GRADIENT GLOW LAYERS ================= */}
       {/* 1. Top Left Glow */}
       <div
@@ -81,11 +81,11 @@ export default function FeaturesSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Text & Stats */}
           <div className="lg:col-span-6 flex flex-col justify-center">
-            <h2 className="text-[#000] font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
+            <h2 className="text-[#000] dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
               Your Path to Professional Growth Starts Here!
             </h2>
 
-            <p className="text-[#4F4F4F] font-satoshi font-normal text-base lg:text-[18px] leading-[160%] max-w-[540px] mt-5 sm:mt-6">
+            <p className="text-[#4F4F4F] dark:text-zinc-400 font-satoshi font-normal text-base lg:text-[18px] leading-[160%] max-w-[540px] mt-5 sm:mt-6">
               Explore our curated selection of courses tailored to enhance your
               capabilities and accelerate your career journey. Whether you are
               looking to sharpen specific skills, gain industry expertise, or
@@ -97,10 +97,10 @@ export default function FeaturesSection() {
             <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-[420px] mt-8 sm:mt-10 pt-6">
               {stats.map((stat) => (
                 <div key={stat.id} className="flex flex-col">
-                  <span className="text-[#003BE2] font-poppins font-semibold text-2xl sm:text-3xl lg:text-[36px] leading-[120%] tracking-tight">
+                  <span className="text-[#003BE2] dark:text-[#6493FF] font-poppins font-semibold text-2xl sm:text-3xl lg:text-[36px] leading-[120%] tracking-tight">
                     {stat.value}
                   </span>
-                  <span className="text-[#525866] font-satoshi font-normal text-xs sm:text-sm md:text-base mt-1">
+                  <span className="text-[#525866] dark:text-zinc-400 font-satoshi font-normal text-xs sm:text-sm md:text-base mt-1">
                     {stat.label}
                   </span>
                 </div>
@@ -139,13 +139,13 @@ export default function FeaturesSection() {
 
           {/* Right Text & Feature Checklist */}
           <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-center lg:pl-6">
-            <h2 className="text-[#000] font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
+            <h2 className="text-[#000] dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
               Create & Manage <br className="hidden sm:inline" />
               Courses Easily.
             </h2>
 
-            <p className="text-[#4F4F4F] font-satoshi font-normal text-base lg:text-[18px] leading-[160%] max-w-[540px] mt-5 sm:mt-6 mb-8">
-              <strong className="font-semibold text-black">ByteSpace</strong>{" "}
+            <p className="text-[#4F4F4F] dark:text-zinc-400 font-satoshi font-normal text-base lg:text-[18px] leading-[160%] max-w-[540px] mt-5 sm:mt-6 mb-8">
+              <strong className="font-semibold text-black dark:text-white">ByteSpace</strong>{" "}
               supports individuals or entities in the creation, publication, and
               administration of educational courses.
             </p>
@@ -155,10 +155,10 @@ export default function FeaturesSection() {
               {checkListItems.map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3.5">
                   <CheckCircle2
-                    className="w-5 h-5 text-[#003BE2] shrink-0 fill-[#003BE2] text-white"
+                    className="w-5 h-5 text-[#003BE2] dark:text-[#CBFC01] shrink-0 fill-[#003BE2] dark:fill-[#CBFC01] text-white dark:text-black"
                     aria-hidden="true"
                   />
-                  <span className="text-[#0A0D14] font-satoshi font-medium text-base sm:text-[18px] leading-[140%]">
+                  <span className="text-[#0A0D14] dark:text-zinc-200 font-satoshi font-medium text-base sm:text-[18px] leading-[140%]">
                     {item}
                   </span>
                 </div>

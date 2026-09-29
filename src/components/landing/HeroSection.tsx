@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 pb-0 w-full">
+    <section className="relative overflow-hidden pt-28 xs:pt-32   pb-0 w-full">
       <div className="w-full relative">
         
         {/* ================= FULL-WIDTH 3D SHAPES (EDGE POSITIONED) ================= */}
@@ -85,7 +85,7 @@ export default function HeroSection() {
         </div>
 
         {/* Main Header & Subtitle */}
-        <div className="text-center max-w-4xl mx-auto px-4 pt-1 sm:pt-3 z-10 relative">
+        <div className="text-center max-w-4xl mx-auto px-4 pt-3 sm:pt-4 z-10 relative">
           <h1 className="text-[#FFF] font-poppins font-semibold text-2xl xs:text-3xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[120%] tracking-[-0.72px]">
             Get Access to Hundreds <br className="hidden sm:inline" />
             Courses Available
@@ -97,16 +97,16 @@ export default function HeroSection() {
           {/* Search Bar */}
           <form
             onSubmit={handleSearch}
-            className="mt-4 sm:mt-7 md:mt-8 max-w-[480px] mx-auto bg-white rounded-full p-1.5 pl-4 sm:pl-6 flex items-center justify-between shadow-2xl transition-all focus-within:ring-2 focus-within:ring-[#CBFC01]"
+            className="mt-4 sm:mt-7 md:mt-8 max-w-[480px] mx-auto bg-white dark:bg-[#0A0E1A]/95 rounded-full p-1.5 pl-4 sm:pl-6 flex items-center justify-between shadow-2xl border border-transparent dark:border-zinc-700/60 transition-all focus-within:ring-2 focus-within:ring-[#CBFC01]"
           >
             <div className="flex items-center gap-2 flex-1 min-w-0 pr-2">
-              <Search className="w-4 h-4 text-zinc-400 shrink-0" />
+              <Search className="w-4 h-4 text-zinc-400 dark:text-zinc-500 shrink-0" />
               <input
                 type="text"
                 placeholder="Course, topic, creator"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-transparent outline-none text-zinc-800 placeholder:text-zinc-400 text-xs sm:text-sm font-normal"
+                className="w-full bg-transparent outline-none text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 text-xs sm:text-sm font-normal"
               />
             </div>
             <button
@@ -149,13 +149,13 @@ export default function HeroSection() {
             </div>
 
             {/* FLOATING CARD 1: Happy Students (Bottom-Left of Person) */}
-            <div className="absolute bottom-[14%] sm:bottom-[16%] -left-3 sm:-left-8 md:-left-14 lg:-left-20 xl:-left-24 z-20 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-3.5 md:p-4 lg:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] text-left min-w-[125px] sm:min-w-[155px] md:min-w-[185px] scale-90 sm:scale-95 md:scale-100 origin-bottom-left">
-              <p className="text-[#0A0D14] font-bold text-[10px] sm:text-xs md:text-sm lg:text-base">
+            <div className="absolute bottom-[14%] sm:bottom-[16%] -left-3 sm:-left-8 md:-left-14 lg:-left-20 xl:-left-24 z-20 bg-white dark:bg-[#0C101C]/95 backdrop-blur-md rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-3.5 md:p-4 lg:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.6)] border border-transparent dark:border-zinc-800/80 text-left min-w-[125px] sm:min-w-[155px] md:min-w-[185px] scale-90 sm:scale-95 md:scale-100 origin-bottom-left transition-all">
+              <p className="text-[#0A0D14] dark:text-zinc-100 font-bold text-[10px] sm:text-xs md:text-sm lg:text-base">
                 Happy Students
               </p>
               <div className="flex items-center gap-1 sm:gap-1.5 mt-0.5">
-                <span className="text-[10px] sm:text-xs md:text-sm font-semibold text-[#0A0D14]">4.5</span>
-                <span className="text-[#525866] text-[9px] sm:text-[10px] md:text-xs font-normal">(240)</span>
+                <span className="text-[10px] sm:text-xs md:text-sm font-semibold text-[#0A0D14] dark:text-zinc-100">4.5</span>
+                <span className="text-[#525866] dark:text-zinc-400 text-[9px] sm:text-[10px] md:text-xs font-normal">(240)</span>
                 <Star className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 text-[#FFB800] fill-[#FFB800]" />
               </div>
 
@@ -171,14 +171,14 @@ export default function HeroSection() {
             </div>
 
             {/* FLOATING CARD 2: Learning Progress (Top-Right of Person) */}
-            <div className="absolute top-[24%] sm:top-[28%] -right-3 sm:-right-8 md:-right-14 lg:-right-20 xl:-right-24 z-20 bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-3.5 md:p-4 lg:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] text-left min-w-[125px] sm:min-w-[155px] md:min-w-[185px] lg:min-w-[210px] scale-90 sm:scale-95 md:scale-100 origin-top-right">
-              <p className="text-[#525866] text-[9px] sm:text-xs md:text-sm font-medium">
+            <div className="absolute top-[24%] sm:top-[28%] -right-3 sm:-right-8 md:-right-14 lg:-right-20 xl:-right-24 z-20 bg-white dark:bg-[#0C101C]/95 backdrop-blur-md rounded-xl sm:rounded-2xl md:rounded-3xl p-2.5 sm:p-3.5 md:p-4 lg:p-5 shadow-[0_16px_36px_rgba(0,0,0,0.18)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.6)] border border-transparent dark:border-zinc-800/80 text-left min-w-[125px] sm:min-w-[155px] md:min-w-[185px] lg:min-w-[210px] scale-90 sm:scale-95 md:scale-100 origin-top-right transition-all">
+              <p className="text-[#525866] dark:text-zinc-400 text-[9px] sm:text-xs md:text-sm font-medium">
                 Learning Progress
               </p>
-              <p className="text-[#0A0D14] font-poppins font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl mt-0.5 sm:mt-1">
+              <p className="text-[#0A0D14] dark:text-zinc-100 font-poppins font-bold text-base sm:text-2xl md:text-3xl lg:text-4xl mt-0.5 sm:mt-1">
                 55%
               </p>
-              <div className="w-full h-1 sm:h-2 md:h-2.5 bg-[#F5F5F6] rounded-full overflow-hidden mt-1.5 sm:mt-3">
+              <div className="w-full h-1 sm:h-2 md:h-2.5 bg-[#F5F5F6] dark:bg-zinc-800 rounded-full overflow-hidden mt-1.5 sm:mt-3">
                 <div className="h-full bg-[#CBFC01] rounded-full w-[55%]" />
               </div>
             </div>
