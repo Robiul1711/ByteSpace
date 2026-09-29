@@ -127,7 +127,7 @@ export default function LoginPage() {
               {/* Divider */}
               <div className="relative my-8 flex items-center justify-center">
                 <div className="w-full border-t border-zinc-200" />
-                <span className="absolute bg-white px-3 text-xs font-satoshi text-zinc-400">
+                <span className="absolute bg-white px-3 text-xs sm:text-sm lg:text-base xl:text-lg font-satoshi text-zinc-400">
                   or
                 </span>
               </div>
