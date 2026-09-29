@@ -19,7 +19,7 @@ export default function CreatorCTASection() {
       </div>
 
       {/* 2. White Squiggle (Mid-top left) */}
-      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 left-16 sm:left-24 md:left-32 lg:left-40 xl:left-48 2xl:left-60 w-10 sm:w-14 md:w-16 lg:w-20 xl:w-[90px] 2xl:w-[110px] -rotate-12 z-0 pointer-events-none">
+      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 left-16 sm:left-24 md:left-32 lg:left-40 xl:left-48 2xl:left-60 w-10 sm:w-14 md:w-16 lg:w-20 xl:w-[90px] 2xl:w-[150px] -rotate-12 z-0 pointer-events-none">
         <Image
           src="/images/shapes/Frame1.png"
           alt="White Squiggle"
@@ -30,7 +30,7 @@ export default function CreatorCTASection() {
       </div>
 
       {/* 3. White Pyramid/Cone (Bottom-Left edge) */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 sm:left-2 md:left-4 lg:left-6 w-14 sm:w-18 md:w-22 lg:w-28 xl:w-32 z-0 pointer-events-none">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 w-14 sm:w-18 md:w-22 lg:w-28 xl:w-32 z-0 pointer-events-none">
         <Image
           src="/images/shapes/whiteangle.png"
           alt="White Cone"
@@ -41,7 +41,7 @@ export default function CreatorCTASection() {
       </div>
 
       {/* 4. Lime Donut / Torus (Bottom-Left sub-merged) */}
-      <div className="absolute -bottom-6 sm:-bottom-8 md:-bottom-12 lg:-bottom-14 left-10 sm:left-16 md:left-24 lg:left-32 xl:left-40 2xl:left-48 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[300px] z-0 pointer-events-none">
+      <div className="absolute -bottom-0 left-10 sm:left-16 md:left-24 lg:left-32 xl:left-40 2xl:left-48 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[400px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/neonCircle.png"
           alt="Lime Torus Ring"
@@ -53,19 +53,19 @@ export default function CreatorCTASection() {
 
       {/* ================= RIGHT SIDE 3D SHAPES ================= */}
       {/* 5. Lime Pyramid (Top-Right floating) */}
-      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 right-14 sm:right-20 md:right-28 lg:right-36 xl:right-48 2xl:right-64 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-[130px] z-0 pointer-events-none">
+      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 right-14 sm:right-20 md:right-28 lg:right-36 xl:right-48 2xl:right-64 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-[160px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/neoncone.png"
           alt="Lime Pyramid"
-          width={130}
-          height={130}
+          width={160}
+          height={160}
           priority
           className="w-full h-auto"
         />
       </div>
 
       {/* 6. White Cylinder (Right Edge bleeding off) */}
-      <div className="absolute top-1 sm:top-2 md:top-4 -right-4 sm:-right-6 md:-right-8 lg:-right-10 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[280px] z-0 pointer-events-none">
+      <div className="absolute top-1 sm:top-2 md:top-4 -right-4 sm:-right-6 md:-right-8 lg:-right-10 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[250px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/whitcone.png"
           alt="White Cylinder"
@@ -77,12 +77,12 @@ export default function CreatorCTASection() {
       </div>
 
       {/* 7. Lime Spring (Bottom-Right rising) */}
-      <div className="absolute -bottom-4 sm:-bottom-6 md:-bottom-8 -right-2 sm:-right-4 md:-right-6 lg:-right-8 w-24 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[260px] z-0 pointer-events-none">
+      <div className="absolute -bottom-0 -right-0 w-24 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[300px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/frame3.png"
           alt="Lime Spring"
-          width={260}
-          height={260}
+          width={300}
+          height={300}
           className="w-full h-auto"
         />
       </div>

@@ -17,24 +17,26 @@ export default function SignupPage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-hero-grid text-white flex flex-col justify-between p-6 sm:p-10 lg:p-12 relative overflow-hidden">
-      {/* Top Header Logo */}
-      <div className="w-full max-w-7xl mx-auto mb-8 lg:mb-4">
-        <Link href="/" className="inline-block">
-          <div className="relative h-8 w-36 sm:w-40">
-            <Image
-              src="/logos/Header_Logo.png"
-              alt="ByteSpace"
-              fill
-              className="object-contain object-left"
-              priority
-            />
-          </div>
-        </Link>
-      </div>
+    <main className="min-h-screen w-full bg-hero-grid text-white flex flex-col justify-between relative overflow-hidden pb-12">
+      {/* Top Header Logo - Aligned exactly like Navbar */}
+      <header className="w-full relative z-50">
+        <div className="max-container section-padding-x py-6 flex items-center">
+          <Link href="/" className="flex items-center">
+            <div className="relative h-8 w-36 sm:w-40">
+              <Image
+                src="/logos/Header_Logo.png"
+                alt="ByteSpace"
+                fill
+                className="object-contain object-left"
+                priority
+              />
+            </div>
+          </Link>
+        </div>
+      </header>
 
       {/* Main Content Area: 2 Columns */}
-      <div className="w-full max-w-7xl mx-auto flex-1 flex items-center justify-center">
+      <div className="w-full max-container section-padding-x flex-1 flex items-center justify-center py-6 sm:py-8 lg:py-10">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column: Heading, Subtitle & Graphic */}
