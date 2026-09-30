@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col bg-white dark:bg-dark-bg transition-colors duration-300">
       {/* Top Blue Hero Wrapper with Blueprint Grid */}
-      <div className="w-full bg-hero-grid text-white relative min-h-screen flex flex-col justify-between">
+      <div className="w-full bg-hero-grid text-white relative">
         <Navbar />
         <HeroSection />
       </div>
