@@ -13,8 +13,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden pt-28 xs:pt-32 pb-0 w-full">
-      <div className="w-full relative">
+    <section className="relative overflow-hidden pt-24 xs:pt-28 sm:pt-32 pb-0 w-full min-h-screen flex flex-col justify-between">
+      <div className="w-full relative flex-1 flex flex-col justify-between">
         {/* ================= FULL-WIDTH 3D SHAPES (EDGE POSITIONED WITH FLOATING ANIMATION) ================= */}
         {/* 1. Lime Spring (Top-Left Edge) */}
         <motion.div
