@@ -99,7 +99,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/signup"
-                className="bg-[#CBFC01] hover:brightness-95 text-black font-semibold text-xs sm:text-sm px-5 py-2 rounded-full transition-all shadow-sm active:scale-95 cursor-pointer"
+                className="btn-primary text-xs sm:text-sm px-5 py-2 shadow-sm"
               >
                 Join Us
               </Link>
@@ -228,7 +228,7 @@ export default function Navbar() {
           <Link
             href="/signup"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full text-center py-3 rounded-full bg-[#CBFC01] hover:brightness-95 text-black font-semibold text-sm shadow-lg active:scale-98 transition-all"
+            className="w-full text-center py-3 btn-primary text-sm shadow-lg active:scale-98"
           >
             Join Us
           </Link>

@@ -17,7 +17,7 @@ export default function HeroSection() {
         
         {/* ================= FULL-WIDTH 3D SHAPES (EDGE POSITIONED) ================= */}
         {/* 1. Lime Spring (Top-Left Edge) */}
-        <div className="hidden sm:block absolute top-[18%] sm:top-[16%] md:top-[14%] lg:top-[12%] -left-4 sm:-left-6 md:-left-8 lg:-left-10 w-24 sm:w-32 md:w-44 lg:w-56 xl:w-64 z-10 pointer-events-none">
+        <div className="hidden sm:block absolute top-[18%] sm:top-[16%] md:top-[14%] lg:top-[12%] -left-0  w-24 sm:w-32 md:w-44 lg:w-56 xl:w-64 z-10 pointer-events-none">
           <Image
             src="/images/shapes/Frame.png"
             alt="Decorative 3D Lime Spring"
@@ -29,7 +29,7 @@ export default function HeroSection() {
         </div>
 
         {/* 2. White Squiggle (Mid-Left) */}
-        <div className="hidden md:block absolute top-[44%] sm:top-[42%] left-4 sm:left-8 md:left-14 lg:left-22 xl:left-28 w-14 sm:w-20 md:w-28 lg:w-34 xl:w-40 z-10 pointer-events-none">
+        <div className="hidden md:block absolute top-[44%] sm:top-[42%] left-4 sm:left-8 md:left-14 lg:left-22 xl:left-32 2xl:left-48 w-14 sm:w-20 md:w-28 lg:w-34 xl:w-40 z-10 pointer-events-none">
           <Image
             src="/images/shapes/Frame1.png"
             alt="Decorative 3D White Squiggle"
@@ -76,7 +76,7 @@ export default function HeroSection() {
         {/* 6. White Spring (Bottom-Right Edge) */}
         <div className="hidden sm:block absolute bottom-0 -right-4 sm:-right-6 md:-right-8 lg:-right-10 w-20 sm:w-30 md:w-42 lg:w-54 xl:w-64 z-10 pointer-events-none">
           <Image
-            src="/images/shapes/Frame2.png"
+            src="/images/shapes/Frame1.png"
             alt="Decorative 3D White Spring"
             width={260}
             height={260}

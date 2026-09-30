@@ -4,8 +4,14 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-// Brand Logos Set 1 & Set 2 for Blur Flip cycling
-const logoSets = [
+interface BrandLogo {
+  id: string;
+  src: string;
+  alt: string;
+}
+
+// Brand Logos Set 1, 2 & 3 for Blur Flip cycling
+const logoSets: BrandLogo[][] = [
   [
     { id: "1a", src: "/images/brandsLogo/b1.png", alt: "Brand Partner 1" },
     { id: "2a", src: "/images/brandsLogo/b2.png", alt: "Brand Partner 2" },
@@ -44,7 +50,7 @@ export default function LogoBar() {
   const currentLogos = logoSets[currentSetIndex];
 
   return (
-    <section className="w-full bg-[#F5F5F6] dark:bg-[#080B12] py-8 sm:py-10 md:py-12 border-b border-zinc-200/60 dark:border-zinc-800/60 overflow-hidden relative transition-colors duration-300">
+    <section className="w-full bg-surface-light dark:bg-dark-bg py-8 sm:py-10 md:py-12 shadow-md border-zinc-200/60 dark:border-zinc-800/60 overflow-hidden relative transition-colors duration-300">
       <div className="max-container section-padding-x">
         <div className="flex flex-wrap items-center justify-center sm:justify-between gap-6 sm:gap-10 md:gap-14 [perspective:1000px]">
           {currentLogos.map((brand, index) => (

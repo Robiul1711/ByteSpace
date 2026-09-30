@@ -5,8 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/common/ThemeToggle";
 
+interface SignupFormData {
+  fullName: string;
+  email: string;
+  password: string;
+}
+
 export default function SignupPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<SignupFormData>({
     fullName: "",
     email: "",
     password: "",

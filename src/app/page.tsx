@@ -29,11 +29,11 @@ export default function Home() {
       {/* Value Proposition / Features Section */}
       <FeaturesSection />
 
-      {/* Testimonials / Community Section */}
-      <TestimonialsSection />
-
       {/* Creator CTA Banner Section */}
       <CreatorCTASection />
+
+      {/* Testimonials / Community Section */}
+      <TestimonialsSection />
 
       {/* Footer */}
       <Footer />

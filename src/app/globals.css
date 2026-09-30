@@ -6,14 +6,35 @@
 @theme {
   --font-satoshi: 'Satoshi', sans-serif;
   --font-poppins: var(--font-poppins), sans-serif;
+
+  /* Brand Colors */
   --color-brand-blue: #003BE2;
+  --color-brand-blue-deep: #002FB5;
   --color-brand-lime: #CBFC01;
+
+  /* Text Colors */
+  --color-text-dark: #242528;
+  --color-text-body: #4F4F4F;
+  --color-text-muted: #525866;
+
+  /* Surface & Background Colors */
+  --color-surface-light: #F5F5F6;
+  --color-dark-bg: #07090E;
+  --color-dark-surface: #0C101A;
+  --color-dark-navy: #050B1E;
 }
 
 :root {
   --font-satoshi: 'Satoshi', sans-serif;
   --brand-blue: #003BE2;
+  --brand-blue-deep: #002FB5;
   --brand-lime: #CBFC01;
+  --text-dark: #242528;
+  --text-body: #4F4F4F;
+  --text-muted: #525866;
+  --surface-light: #F5F5F6;
+  --dark-bg: #07090E;
+  --dark-surface: #0C101A;
 }
 
 body {
@@ -106,6 +127,70 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #232d3b;
   border-radius: 999px;
+}
+
+/* ================= REUSABLE COMMON UTILITIES ================= */
+.section-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.44px;
+  font-size: 1.875rem;
+}
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 44px;
+  }
+}
+
+.section-desc {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  line-height: 160%;
+  font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+  .section-desc {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .section-desc {
+    font-size: 18px;
+  }
+}
+
+.btn-primary {
+  background-color: #CBFC01;
+  color: #000;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.card-surface {
+  background-color: #ffffff;
+  border: 1px solid rgba(233, 235, 239, 0.8);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+.dark .card-surface,
+:where(.dark, .dark *) .card-surface {
+  background-color: #0C101A;
+  border-color: rgba(39, 39, 42, 0.8);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #03f769;

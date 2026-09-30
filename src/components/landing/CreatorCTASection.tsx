@@ -7,7 +7,7 @@ export default function CreatorCTASection() {
     <section className="relative w-full overflow-hidden bg-hero-grid text-white py-16 sm:py-20 md:py-24 lg:py-28 min-h-[460px] md:min-h-[500px] flex items-center justify-center">
       {/* ================= LEFT SIDE 3D SHAPES ================= */}
       {/* 1. Lime Spring (Top-Left corner) */}
-      <div className="absolute -top-6 sm:-top-10 md:-top-14 lg:-top-16 -left-4 sm:-left-6 md:-left-8 lg:-left-10 w-24 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[280px] z-0 pointer-events-none">
+      <div className="absolute -top-0 -left-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[280px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/Frame.png"
           alt="Lime Spring"
@@ -65,7 +65,7 @@ export default function CreatorCTASection() {
       </div>
 
       {/* 6. White Cylinder (Right Edge bleeding off) */}
-      <div className="absolute top-1 sm:top-2 md:top-4 -right-4 sm:-right-6 md:-right-8 lg:-right-10 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[250px] z-0 pointer-events-none">
+      <div className="absolute top-1 sm:top-2 md:top-4 lg:top-6 xl:top-8 -right-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-60 2xl:w-[250px] z-0 pointer-events-none">
         <Image
           src="/images/shapes/whitcone.png"
           alt="White Cylinder"
@@ -90,13 +90,13 @@ export default function CreatorCTASection() {
       {/* ================= CENTERED CONTENT ================= */}
       <div className="relative z-10 max-w-[560px] md:max-w-[620px] lg:max-w-[680px] xl:max-w-[740px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
         {/* Title (Heading M) */}
-        <h2 className="text-[#F5F5F6] text-center font-poppins font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] w-full">
+        <h2 className="section-title text-[#F5F5F6] text-center w-full">
           Unlock Your Potential as a <br className="hidden sm:inline" />
           Creator with ByteSpace
         </h2>
 
         {/* Subtitle / Paragraph (Body L) */}
-        <p className="text-[#F5F5F6] text-center font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[160%] w-full mt-4 sm:mt-5">
+        <p className="section-desc text-white/90 text-center w-full mt-4 sm:mt-5">
           Experience the collaboration of numerous creators and an expanding
           selection of courses. Register now and become a part of a community
           comprising over 10,000 local and international creators. Utilize our
@@ -107,7 +107,7 @@ export default function CreatorCTASection() {
         {/* CTA Button */}
         <Link
           href="#join-creator"
-          className="mt-7 sm:mt-8 inline-flex items-center justify-center bg-[#CBFC01] hover:brightness-95 text-black font-semibold text-sm sm:text-base px-7 sm:px-8 py-3 rounded-full transition-all shadow-md active:scale-95 cursor-pointer"
+          className="mt-7 sm:mt-8 inline-flex items-center justify-center btn-primary text-sm sm:text-base px-7 sm:px-8 py-3 shadow-md"
         >
           Join as Creator
         </Link>

@@ -26,7 +26,21 @@ const filterTags = [
   "+ More",
 ];
 
-const courses = [
+interface Course {
+  id: number;
+  title: string;
+  author: string;
+  rating: string;
+  level: string;
+  price: string;
+  period: string;
+  image: string;
+  lessons: string;
+  duration: string;
+  comments: string;
+}
+
+const courses: Course[] = [
   {
     id: 1,
     title: "Learn Figma from Basic",
@@ -111,16 +125,16 @@ export default function CoursesSection() {
   const [activeTag, setActiveTag] = useState("Featured");
 
   return (
-    <section className="relative w-full bg-white dark:bg-[#07090E] py-20 sm:py-24 lg:py-28 overflow-hidden transition-colors duration-300">
+    <section className="relative w-full bg-white dark:bg-dark-bg pt-12 sm:pt-14 lg:pt-16 pb-20 sm:pb-24 lg:pb-28 overflow-hidden transition-colors duration-300">
       <div className="relative z-10 max-container section-padding-x">
         {/* ================= HEADER ================= */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
-          <h2 className="text-[#000] dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px]">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+          <h2 className="section-title text-black dark:text-white">
             Discover Your Passion, <br className="hidden sm:inline" />
             Build Your Skills
           </h2>
 
-          <p className="text-[#82868E] dark:text-zinc-400 font-satoshi font-normal text-sm sm:text-base md:text-[18px] leading-[160%] max-w-[780px] mt-4 sm:mt-5">
+          <p className="section-desc text-text-muted dark:text-zinc-400 max-w-[800px] mt-4 sm:mt-5">
             At Bytespace Courses, we bring you closer to life-changing knowledge.
             Explore a variety of courses across different fields, from technology
             to the arts, and make a difference in your career and life.
@@ -139,10 +153,10 @@ export default function CoursesSection() {
                 onClick={() => !isMore && setActiveTag(tag)}
                 className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-satoshi font-medium transition-all cursor-pointer ${
                   isActive
-                    ? "bg-[#CBFC01] text-[#0A0D14] font-semibold shadow-sm"
+                    ? "bg-brand-lime text-black font-semibold shadow-sm"
                     : isMore
-                    ? "bg-[#F5F5F6] dark:bg-zinc-800 text-[#003BE2] dark:text-[#CBFC01] font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700"
-                    : "bg-[#F5F5F6] dark:bg-zinc-800/80 text-[#525866] dark:text-zinc-300 hover:bg-zinc-200/80 dark:hover:bg-zinc-700 hover:text-black dark:hover:text-white"
+                    ? "bg-surface-light dark:bg-zinc-800 text-brand-blue dark:text-brand-lime font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700"
+                    : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300 hover:bg-zinc-200/80 dark:hover:bg-zinc-700 hover:text-black dark:hover:text-white"
                 }`}
               >
                 {tag}
@@ -156,7 +170,7 @@ export default function CoursesSection() {
           {courses.map((course) => (
             <div
               key={course.id}
-              className="bg-white dark:bg-[#0C101A] rounded-[24px] p-4 sm:p-5 border border-[#E9EBEF] dark:border-zinc-800/80 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.6)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+              className="card-surface p-4 sm:p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.6)] hover:-translate-y-1.5 duration-300 flex flex-col justify-between group cursor-pointer"
             >
               <div>
                 {/* Course Image with Floating Translucent Badges */}

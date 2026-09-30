@@ -2,7 +2,14 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const categories = [
+interface CategoryItem {
+  id: number;
+  title: string;
+  icon: string;
+  href: string;
+}
+
+const categories: CategoryItem[] = [
   {
     id: 1,
     title: "Design",
@@ -43,7 +50,7 @@ const categories = [
 
 export default function CategoriesSection() {
   return (
-    <section className="relative w-full bg-white dark:bg-[#07090E] py-16 sm:py-20 lg:py-24 overflow-hidden transition-colors duration-300">
+    <section className="relative w-full bg-white dark:bg-[#07090E] pb-16 sm:pb-20 lg:pb-24 overflow-hidden transition-colors duration-300">
       <div className="relative z-10 max-container section-padding-x">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center ">

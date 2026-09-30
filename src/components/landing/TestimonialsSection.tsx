@@ -38,52 +38,85 @@ const testimonials: Testimonial[] = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-[#07090E] section-padding-y transition-colors duration-300">
-      {/* 1. Left Gradient Glow (Figma exact) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-[350px] -left-[350px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
-          filter: "blur(20px)",
-        }}
-      />
+    <section className="relative w-full overflow-hidden bg-white dark:bg-dark-bg section-padding-y transition-colors duration-300">
+      {/* ================= LIGHT MODE GRADIENTS (Figma exact) ================= */}
+      <div className="dark:hidden">
+        {/* 1. Left Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-[350px] -left-[350px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
 
-      {/* 2. Middle Gradient Glow (Figma exact) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-[180px] left-1/2 -translate-x-1/2 w-[672px] h-[672px] rounded-[672px] -z-0 opacity-80"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
-          filter: "blur(20px)",
-        }}
-      />
+        {/* 2. Middle Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-[180px] left-1/2 -translate-x-1/2 w-[672px] h-[672px] rounded-[672px] -z-0 opacity-80"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
 
-      {/* 3. Right Gradient Glow (Figma exact) */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-[350px] -right-[300px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
-        style={{
-          background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
-          filter: "blur(20px)",
-        }}
-      />
+        {/* 3. Right Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-[350px] -right-[300px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
+      </div>
+
+      {/* ================= DARK MODE AMBIENT NEON GLOWS (Futuristic / Cyber Aura) ================= */}
+      <div className="hidden dark:block">
+        {/* 1. Top-Center Lime/Cyan Aurora Aura */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] rounded-full -z-0 opacity-30 blur-[110px]"
+          style={{
+            background: "radial-gradient(ellipse, rgba(203, 252, 1, 0.5) 0%, rgba(0, 91, 255, 0.3) 50%, transparent 80%)",
+          }}
+        />
+
+        {/* 2. Bottom-Left Deep Electric Blue Orb */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-28 w-[650px] h-[650px] rounded-full -z-0 opacity-45 blur-[120px]"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 59, 226, 0.8) 0%, rgba(0, 39, 180, 0.25) 50%, transparent 80%)",
+          }}
+        />
+
+        {/* 3. Top-Right Cyan Backlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-10 -right-20 w-[550px] h-[550px] rounded-full -z-0 opacity-35 blur-[100px]"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 150, 255, 0.6) 0%, rgba(0, 59, 226, 0.2) 50%, transparent 80%)",
+          }}
+        />
+      </div>
 
       {/* Main Content Container (1440px frame with 120px padding) */}
       <div className="relative z-10 max-container section-padding-x">
         {/* Top Header Row */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-10 mb-12 sm:mb-16">
           <div className="w-full lg:max-w-[577px]">
-            <h2 className="text-[#000] dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px]">
+            <h2 className="section-title text-black dark:text-white">
               Discover What Our <br className="hidden sm:inline" />
               Community Is Saying
             </h2>
           </div>
           <div className="w-full lg:max-w-[580px]">
-            <p className="text-[#4F4F4F] dark:text-zinc-400 font-satoshi font-normal text-base lg:text-[18px] leading-[160%]">
+            <p className="section-desc text-text-body dark:text-zinc-400">
               At ByteSpace, our vibrant community of learners and creators is at
               the heart of what we do. Hear directly from those who have
               experienced the transformative journey of learning and creating on
@@ -98,7 +131,7 @@ export default function TestimonialsSection() {
           {testimonials.map((item) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-[#0C101A] rounded-[24px] p-6 sm:p-8 border border-[#E9EBEF]/80 dark:border-zinc-800/80 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+              className="card-surface p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 hover:-translate-y-1.5 duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* User Avatar */}
@@ -123,7 +156,7 @@ export default function TestimonialsSection() {
                 </p>
 
                 {/* Testimonial Quote */}
-                <p className="text-[#4F4F4F] dark:text-zinc-300 font-satoshi font-normal text-base sm:text-[18px] leading-[160%]">
+                <p className="text-[#4F4F4F] dark:text-zinc-300 font-satoshi font-normal text-sm md:text-base leading-[160%]">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>

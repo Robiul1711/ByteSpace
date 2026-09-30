@@ -5,8 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import ThemeToggle from "@/components/common/ThemeToggle";
 
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 export default function LoginPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
   });
