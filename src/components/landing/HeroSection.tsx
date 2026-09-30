@@ -228,14 +228,14 @@ export default function HeroSection() {
           </div>
 
           {/* CENTER STAGE: STUDENT PHOTO + FLOATING BADGES */}
-          <div className="relative z-10 w-full max-w-[280px] xs:max-w-[340px] sm:max-w-[420px] md:max-w-[490px] lg:max-w-[540px] xl:max-w-[580px] flex justify-center items-end">
+          <div className="relative z-10 w-full max-w-[280px] xs:max-w-[340px] sm:max-w-[420px] md:max-w-[490px] lg:max-w-[540px] xl:max-w-[580px] flex justify-center items-end aspect-[580/620]">
             
             {/* Main Student Photo */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 w-full"
+              className="relative z-10 w-full h-full flex items-end justify-center"
             >
               <Image
                 src="/images/hero-student.png"
@@ -243,7 +243,7 @@ export default function HeroSection() {
                 width={580}
                 height={620}
                 priority
-                className="w-full h-auto object-contain relative z-10 block"
+                className="w-full h-full object-contain object-bottom relative z-10 block"
               />
             </motion.div>
 
