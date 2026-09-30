@@ -59,7 +59,7 @@ export default function SignupPage() {
             </p>
 
             {/* Showcase Visual Graphic */}
-            <div className="relative w-full max-w-[460px] aspect-[1.05/1] mt-8 lg:mt-10">
+            <div className="relative w-full max-w-115 aspect-[1.05/1] mt-8 lg:mt-10">
               <Image
                 src="/images/authLeft.png"
                 alt="ByteSpace Learning Platform Visual"
@@ -72,9 +72,9 @@ export default function SignupPage() {
 
           {/* Right Column: Signup Card */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[500px] bg-white dark:bg-[#0C101C]/95 dark:backdrop-blur-xl text-zinc-900 dark:text-zinc-100 rounded-[28px] sm:rounded-[36px] p-8 sm:p-12 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-transparent dark:border-zinc-800/80 flex flex-col transition-all">
+            <div className="w-full max-w-125 bg-white dark:bg-[#0C101C]/95 dark:backdrop-blur-xl text-zinc-900 dark:text-zinc-100 rounded-[28px] sm:rounded-[36px] p-8 sm:p-12 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.6)] border border-transparent dark:border-zinc-800/80 flex flex-col transition-all">
               {/* Header */}
-              <span className="font-satoshi font-medium text-sm sm:text-base text-[#003BE2] dark:text-[#CBFC01]">
+              <span className="font-satoshi font-medium text-sm sm:text-base text-brand-blue dark:text-brand-lime">
                 Create an Account
               </span>
               <h2 className="font-poppins font-bold text-3xl sm:text-[38px] leading-[1.15] text-[#0A0D14] dark:text-white mt-1 mb-8">
@@ -88,7 +88,7 @@ export default function SignupPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="fullName"
-                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] dark:text-zinc-300 mb-1.5"
+                    className="font-satoshi text-xs sm:text-sm font-medium text-text-dark dark:text-zinc-300 mb-1.5"
                   >
                     Full Name
                   </label>
@@ -101,7 +101,7 @@ export default function SignupPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, fullName: e.target.value })
                     }
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-[#003BE2] dark:focus:border-[#CBFC01] focus:ring-2 focus:ring-[#003BE2]/10 dark:focus:ring-[#CBFC01]/15 transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-brand-blue dark:focus:border-brand-lime focus:ring-2 focus:ring-brand-blue/10 dark:focus:ring-brand-lime/15 transition-all"
                   />
                 </div>
 
@@ -109,7 +109,7 @@ export default function SignupPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="email"
-                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] dark:text-zinc-300 mb-1.5"
+                    className="font-satoshi text-xs sm:text-sm font-medium text-text-dark dark:text-zinc-300 mb-1.5"
                   >
                     Email
                   </label>
@@ -122,7 +122,7 @@ export default function SignupPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
                     }
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-[#003BE2] dark:focus:border-[#CBFC01] focus:ring-2 focus:ring-[#003BE2]/10 dark:focus:ring-[#CBFC01]/15 transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-brand-blue dark:focus:border-brand-lime focus:ring-2 focus:ring-brand-blue/10 dark:focus:ring-brand-lime/15 transition-all"
                   />
                 </div>
 
@@ -130,7 +130,7 @@ export default function SignupPage() {
                 <div className="flex flex-col">
                   <label
                     htmlFor="password"
-                    className="font-satoshi text-xs sm:text-sm font-medium text-[#242528] dark:text-zinc-300 mb-1.5"
+                    className="font-satoshi text-xs sm:text-sm font-medium text-text-dark dark:text-zinc-300 mb-1.5"
                   >
                     Password
                   </label>
@@ -143,7 +143,7 @@ export default function SignupPage() {
                     onChange={(e) =>
                       setFormData({ ...formData, password: e.target.value })
                     }
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-[#003BE2] dark:focus:border-[#CBFC01] focus:ring-2 focus:ring-[#003BE2]/10 dark:focus:ring-[#CBFC01]/15 transition-all"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-xl border border-zinc-200/90 dark:border-zinc-700/60 bg-white dark:bg-[#141A29] text-sm font-normal text-zinc-800 dark:text-zinc-100 placeholder:text-zinc-400 dark:placeholder:text-zinc-500 outline-none focus:border-brand-blue dark:focus:border-brand-lime focus:ring-2 focus:ring-brand-blue/10 dark:focus:ring-brand-lime/15 transition-all"
                   />
                 </div>
 
@@ -151,7 +151,7 @@ export default function SignupPage() {
                 <div className="flex justify-end mt-4">
                   <button
                     type="submit"
-                    className="bg-[#CBFC01] hover:brightness-95 text-black font-semibold text-sm px-8 py-3 rounded-full transition-all shadow-sm active:scale-95 cursor-pointer"
+                    className="bg-brand-lime hover:brightness-95 text-black font-semibold text-sm px-8 py-3 rounded-full transition-all shadow-sm active:scale-95 cursor-pointer"
                   >
                     Continue
                   </button>
@@ -159,11 +159,11 @@ export default function SignupPage() {
               </form>
 
               {/* Bottom Login Link */}
-              <div className="mt-10 text-center font-satoshi text-xs sm:text-sm text-[#525866] dark:text-zinc-400">
+              <div className="mt-10 text-center font-satoshi text-xs sm:text-sm text-text-muted dark:text-zinc-400">
                 Already have an account?{" "}
                 <Link
                   href="/login"
-                  className="text-[#003BE2] dark:text-[#CBFC01] font-semibold hover:underline"
+                  className="text-brand-blue dark:text-brand-lime font-semibold hover:underline"
                 >
                   Login
                 </Link>

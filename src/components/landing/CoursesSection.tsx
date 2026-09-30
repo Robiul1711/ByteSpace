@@ -141,7 +141,7 @@ export default function CoursesSection() {
             Build Your Skills
           </h2>
 
-          <p className="section-desc text-text-muted dark:text-zinc-400 max-w-[800px] mt-4 sm:mt-5">
+          <p className="section-desc text-text-muted dark:text-zinc-400 max-w-200 mt-4 sm:mt-5">
             At Bytespace Courses, we bring you closer to life-changing knowledge.
             Explore a variety of courses across different fields, from technology
             to the arts, and make a difference in your career and life.
@@ -192,7 +192,7 @@ export default function CoursesSection() {
             >
               <div>
                 {/* Course Image with Floating Translucent Badges */}
-                <div className="relative w-full aspect-[16/10] rounded-[18px] overflow-hidden mb-4 bg-zinc-100 dark:bg-zinc-800">
+                <div className="relative w-full aspect-16/10 rounded-[18px] overflow-hidden mb-4 bg-zinc-100 dark:bg-zinc-800">
                   <Image
                     src={course.image}
                     alt={course.title}
@@ -202,13 +202,13 @@ export default function CoursesSection() {
 
                   {/* Glassmorphism Lesson Meta Badges - Fully Responsive for Laptop Screens */}
                   <div className="absolute bottom-2 left-2 right-2 sm:bottom-2.5 sm:left-2.5 sm:right-2.5 flex items-center justify-between gap-1 sm:gap-1.5 overflow-hidden">
-                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-[#242528] dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
+                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-text-dark dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
                       {course.lessons}
                     </span>
-                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-[#242528] dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
+                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-text-dark dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
                       {course.duration}
                     </span>
-                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-[#242528] dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
+                    <span className="bg-white/80 dark:bg-black/80 backdrop-blur-md text-text-dark dark:text-zinc-100 text-[10px] sm:text-[11px] font-satoshi font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full whitespace-nowrap shadow-xs text-center flex-1 truncate">
                       {course.comments}
                     </span>
                   </div>
