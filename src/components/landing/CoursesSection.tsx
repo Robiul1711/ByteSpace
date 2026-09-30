@@ -182,18 +182,18 @@ export default function CoursesSection() {
             })}
           </div>
 
-          {/* 2. MOBILE VIEW (<SM): Shows 5 pills initially + "+ More" animated expander */}
+          {/* 2. MOBILE VIEW (<SM): Shows 5 pills initially + "+ More" instant expander */}
           <div className="flex sm:hidden flex-wrap items-center justify-center gap-2">
-            {initialMobileTags.map((tag) => {
+            {(isMobileExpanded ? allFilterTags : initialMobileTags).map((tag) => {
               const isActive = activeTag === tag;
               return (
                 <button
                   key={`mob-${tag}`}
                   type="button"
                   onClick={() => setActiveTag(tag)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-satoshi font-medium transition-all cursor-pointer ${
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-satoshi font-medium transition-colors cursor-pointer ${
                     isActive
-                      ? "bg-brand-lime text-black font-semibold shadow-xs scale-105"
+                      ? "bg-brand-lime text-black font-semibold shadow-xs"
                       : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300"
                   }`}
                 >
@@ -202,38 +202,11 @@ export default function CoursesSection() {
               );
             })}
 
-            {/* Animate Extra Tags on Mobile when + More is clicked */}
-            <AnimatePresence>
-              {isMobileExpanded &&
-                extraMobileTags.map((tag, i) => {
-                  const isActive = activeTag === tag;
-                  return (
-                    <motion.button
-                      key={`extra-${tag}`}
-                      type="button"
-                      initial={{ opacity: 0, scale: 0.8, y: 8 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, y: 6 }}
-                      transition={{ duration: 0.25, delay: i * 0.03 }}
-                      onClick={() => setActiveTag(tag)}
-                      className={`px-3.5 py-1.5 rounded-full text-xs font-satoshi font-medium transition-all cursor-pointer ${
-                        isActive
-                          ? "bg-brand-lime text-black font-semibold shadow-xs scale-105"
-                          : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300"
-                      }`}
-                    >
-                      {tag}
-                    </motion.button>
-                  );
-                })}
-            </AnimatePresence>
-
             {/* Mobile "+ More" / "- Less" Toggle Button */}
-            <motion.button
+            <button
               type="button"
-              whileTap={{ scale: 0.94 }}
               onClick={() => setIsMobileExpanded(!isMobileExpanded)}
-              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-satoshi font-semibold bg-surface-light dark:bg-zinc-800 text-brand-blue dark:text-brand-lime border border-brand-blue/20 dark:border-brand-lime/20 shadow-xs cursor-pointer transition-all"
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-satoshi font-semibold bg-surface-light dark:bg-zinc-800 text-brand-blue dark:text-brand-lime border border-brand-blue/20 dark:border-brand-lime/20 shadow-xs cursor-pointer active:scale-95 transition-all"
             >
               {isMobileExpanded ? (
                 <>
@@ -246,7 +219,7 @@ export default function CoursesSection() {
                   <span>More ({extraMobileTags.length})</span>
                 </>
               )}
-            </motion.button>
+            </button>
           </div>
         </motion.div>
 
