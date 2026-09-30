@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Star, BarChart2 } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star, BarChart2, Plus, Minus } from "lucide-react";
 
-const filterTags = [
+const allFilterTags = [
   "Featured",
   "Music",
   "Drawing & Painting",
@@ -24,7 +24,6 @@ const filterTags = [
   "Web Development",
   "Data Science",
   "Cooking",
-  "+ More",
 ];
 
 interface Course {
@@ -124,6 +123,12 @@ const courses: Course[] = [
 
 export default function CoursesSection() {
   const [activeTag, setActiveTag] = useState("Featured");
+  const [isMobileExpanded, setIsMobileExpanded] = useState(false);
+
+  // Mobile shows top 5 items initially, full list on desktop
+  const mobileVisibleCount = 5;
+  const initialMobileTags = allFilterTags.slice(0, mobileVisibleCount);
+  const extraMobileTags = allFilterTags.slice(mobileVisibleCount);
 
   return (
     <section className="relative w-full bg-white dark:bg-dark-bg pt-12 sm:pt-14 lg:pt-16 pb-20 sm:pb-24 lg:pb-28 overflow-hidden transition-colors duration-300">
@@ -156,26 +161,93 @@ export default function CoursesSection() {
           transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-4xl mx-auto mt-8 sm:mt-12"
         >
-          {filterTags.map((tag) => {
-            const isActive = activeTag === tag;
-            const isMore = tag === "+ More";
-            return (
-              <button
-                key={tag}
-                type="button"
-                onClick={() => !isMore && setActiveTag(tag)}
-                className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-satoshi font-medium transition-all cursor-pointer ${
-                  isActive
-                    ? "bg-brand-lime text-black font-semibold shadow-sm"
-                    : isMore
-                    ? "bg-surface-light dark:bg-zinc-800 text-brand-blue dark:text-brand-lime font-semibold hover:bg-zinc-200 dark:hover:bg-zinc-700"
-                    : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300 hover:bg-zinc-200/80 dark:hover:bg-zinc-700 hover:text-black dark:hover:text-white"
-                }`}
-              >
-                {tag}
-              </button>
-            );
-          })}
+          {/* 1. DESKTOP / TABLET VIEW (SM+): Shows all pills cleanly */}
+          <div className="hidden sm:flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+            {allFilterTags.map((tag) => {
+              const isActive = activeTag === tag;
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => setActiveTag(tag)}
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-satoshi font-medium transition-all cursor-pointer ${
+                    isActive
+                      ? "bg-brand-lime text-black font-semibold shadow-sm scale-105"
+                      : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300 hover:bg-zinc-200/80 dark:hover:bg-zinc-700 hover:text-black dark:hover:text-white"
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* 2. MOBILE VIEW (<SM): Shows 5 pills initially + "+ More" animated expander */}
+          <div className="flex sm:hidden flex-wrap items-center justify-center gap-2">
+            {initialMobileTags.map((tag) => {
+              const isActive = activeTag === tag;
+              return (
+                <button
+                  key={`mob-${tag}`}
+                  type="button"
+                  onClick={() => setActiveTag(tag)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-satoshi font-medium transition-all cursor-pointer ${
+                    isActive
+                      ? "bg-brand-lime text-black font-semibold shadow-xs scale-105"
+                      : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300"
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+
+            {/* Animate Extra Tags on Mobile when + More is clicked */}
+            <AnimatePresence>
+              {isMobileExpanded &&
+                extraMobileTags.map((tag, i) => {
+                  const isActive = activeTag === tag;
+                  return (
+                    <motion.button
+                      key={`extra-${tag}`}
+                      type="button"
+                      initial={{ opacity: 0, scale: 0.8, y: 8 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.8, y: 6 }}
+                      transition={{ duration: 0.25, delay: i * 0.03 }}
+                      onClick={() => setActiveTag(tag)}
+                      className={`px-3.5 py-1.5 rounded-full text-xs font-satoshi font-medium transition-all cursor-pointer ${
+                        isActive
+                          ? "bg-brand-lime text-black font-semibold shadow-xs scale-105"
+                          : "bg-surface-light dark:bg-zinc-800/80 text-text-muted dark:text-zinc-300"
+                      }`}
+                    >
+                      {tag}
+                    </motion.button>
+                  );
+                })}
+            </AnimatePresence>
+
+            {/* Mobile "+ More" / "- Less" Toggle Button */}
+            <motion.button
+              type="button"
+              whileTap={{ scale: 0.94 }}
+              onClick={() => setIsMobileExpanded(!isMobileExpanded)}
+              className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-xs font-satoshi font-semibold bg-surface-light dark:bg-zinc-800 text-brand-blue dark:text-brand-lime border border-brand-blue/20 dark:border-brand-lime/20 shadow-xs cursor-pointer transition-all"
+            >
+              {isMobileExpanded ? (
+                <>
+                  <Minus className="w-3 h-3" />
+                  <span>Less</span>
+                </>
+              ) : (
+                <>
+                  <Plus className="w-3 h-3" />
+                  <span>More ({extraMobileTags.length})</span>
+                </>
+              )}
+            </motion.button>
+          </div>
         </motion.div>
 
         {/* ================= 6 COURSE CARDS GRID ================= */}
