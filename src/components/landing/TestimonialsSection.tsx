@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface Testimonial {
   id: number;
@@ -24,7 +27,7 @@ const testimonials: Testimonial[] = [
     role: "Lifelong Learner",
     avatar: "/images/testimonial/jems.png",
     quote:
-      "I've tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development.",
+      "I've explored various online platforms, and ByteSpace stands out for its vibrant community and comprehensive courses. The interactive features and engaging content make the learning experience enjoyable and fulfilling. Highly recommended!",
   },
   {
     id: 3,
@@ -108,7 +111,13 @@ export default function TestimonialsSection() {
       {/* Main Content Container (1440px frame with 120px padding) */}
       <div className="relative z-10 max-container section-padding-x">
         {/* Top Header Row */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-10 mb-12 sm:mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-10 mb-12 sm:mb-16"
+        >
           <div className="w-full lg:max-w-[577px]">
             <h2 className="section-title text-black dark:text-white">
               Discover What Our <br className="hidden sm:inline" />
@@ -124,14 +133,19 @@ export default function TestimonialsSection() {
               perspectives of enthusiastic learners and accomplished creators.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Testimonials 3 Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((item) => (
-            <div
+          {testimonials.map((item, index) => (
+            <motion.div
               key={item.id}
-              className="card-surface p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 hover:-translate-y-1.5 duration-300 flex flex-col justify-between"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="card-surface p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* User Avatar */}
@@ -146,21 +160,21 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Author Name */}
-                <h3 className="text-[#000] dark:text-white font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.2px]">
+                <h3 className="text-black dark:text-white font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.2px]">
                   {item.name}
                 </h3>
 
                 {/* Subtitle / Role */}
-                <p className="text-[#003BE2] dark:text-[#6E95FF] font-satoshi font-normal text-base sm:text-[18px] leading-[160%] mt-1 mb-5">
+                <p className="text-brand-blue dark:text-[#6E95FF] font-satoshi font-normal text-base sm:text-[18px] leading-[160%] mt-1 mb-5">
                   {item.role}
                 </p>
 
                 {/* Testimonial Quote */}
-                <p className="text-[#4F4F4F] dark:text-zinc-300 font-satoshi font-normal text-sm md:text-base leading-[160%]">
+                <p className="text-text-body dark:text-zinc-300 font-satoshi font-normal text-sm md:text-base leading-[160%]">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

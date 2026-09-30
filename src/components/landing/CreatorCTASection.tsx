@@ -1,13 +1,20 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function CreatorCTASection() {
   return (
     <section className="relative w-full overflow-hidden bg-hero-grid text-white py-16 sm:py-20 md:py-24 lg:py-28 min-h-[460px] md:min-h-[500px] flex items-center justify-center">
       {/* ================= LEFT SIDE 3D SHAPES ================= */}
       {/* 1. Lime Spring (Top-Left corner) */}
-      <div className="absolute -top-0 -left-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[280px] z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, -10, 0], rotate: [0, 4, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute -top-0 -left-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[280px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/Frame.png"
           alt="Lime Spring"
@@ -16,10 +23,14 @@ export default function CreatorCTASection() {
           priority
           className="w-full h-auto drop-shadow-2xl"
         />
-      </div>
+      </motion.div>
 
       {/* 2. White Squiggle (Mid-top left) */}
-      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 left-16 sm:left-24 md:left-32 lg:left-40 xl:left-48 2xl:left-60 w-10 sm:w-14 md:w-16 lg:w-20 xl:w-[90px] 2xl:w-[150px] -rotate-12 z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, 12, 0], rotate: [-12, -6, -12] }}
+        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+        className="absolute top-4 sm:top-6 md:top-8 lg:top-10 left-16 sm:left-24 md:left-32 lg:left-40 xl:left-48 2xl:left-60 w-10 sm:w-14 md:w-16 lg:w-20 xl:w-[90px] 2xl:w-[150px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/Frame1.png"
           alt="White Squiggle"
@@ -27,10 +38,14 @@ export default function CreatorCTASection() {
           height={110}
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* 3. White Pyramid/Cone (Bottom-Left edge) */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 w-14 sm:w-18 md:w-22 lg:w-28 xl:w-32 z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-0 w-14 sm:w-18 md:w-22 lg:w-28 xl:w-32 z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/whiteangle.png"
           alt="White Cone"
@@ -38,10 +53,14 @@ export default function CreatorCTASection() {
           height={150}
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* 4. Lime Donut / Torus (Bottom-Left sub-merged) */}
-      <div className="absolute -bottom-0 left-10 sm:left-16 md:left-24 lg:left-32 xl:left-40 2xl:left-48 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[400px] z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, 10, 0], rotate: [0, -4, 0] }}
+        transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute -bottom-0 left-10 sm:left-16 md:left-24 lg:left-32 xl:left-40 2xl:left-48 w-24 sm:w-36 md:w-48 lg:w-60 xl:w-72 2xl:w-[400px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/neonCircle.png"
           alt="Lime Torus Ring"
@@ -49,11 +68,15 @@ export default function CreatorCTASection() {
           height={300}
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* ================= RIGHT SIDE 3D SHAPES ================= */}
       {/* 5. Lime Pyramid (Top-Right floating) */}
-      <div className="absolute top-4 sm:top-6 md:top-8 lg:top-10 right-14 sm:right-20 md:right-28 lg:right-36 xl:right-48 2xl:right-64 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-[160px] z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, -12, 0], rotate: [0, -6, 0] }}
+        transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+        className="absolute top-4 sm:top-6 md:top-8 lg:top-10 right-14 sm:right-20 md:right-28 lg:right-36 xl:right-48 2xl:right-64 w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-[160px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/neoncone.png"
           alt="Lime Pyramid"
@@ -62,10 +85,14 @@ export default function CreatorCTASection() {
           priority
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* 6. White Cylinder (Right Edge bleeding off) */}
-      <div className="absolute top-1 sm:top-2 md:top-4 lg:top-6 xl:top-8 -right-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-60 2xl:w-[250px] z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, 14, 0], rotate: [0, 4, 0] }}
+        transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+        className="absolute top-1 sm:top-2 md:top-4 lg:top-6 xl:top-8 -right-0 w-10 sm:w-36 md:w-48 lg:w-56 xl:w-60 2xl:w-[250px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/whitcone.png"
           alt="White Cylinder"
@@ -74,10 +101,14 @@ export default function CreatorCTASection() {
           priority
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* 7. Lime Spring (Bottom-Right rising) */}
-      <div className="absolute -bottom-0 -right-0 w-24 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[300px] z-0 pointer-events-none">
+      <motion.div
+        animate={{ y: [0, -10, 0], rotate: [0, -4, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.1 }}
+        className="absolute -bottom-0 -right-0 w-24 sm:w-36 md:w-48 lg:w-56 xl:w-64 2xl:w-[300px] z-0 pointer-events-none"
+      >
         <Image
           src="/images/shapes/frame3.png"
           alt="Lime Spring"
@@ -85,10 +116,16 @@ export default function CreatorCTASection() {
           height={300}
           className="w-full h-auto"
         />
-      </div>
+      </motion.div>
 
       {/* ================= CENTERED CONTENT ================= */}
-      <div className="relative z-10 max-w-[560px] md:max-w-[620px] lg:max-w-[680px] xl:max-w-[740px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 20 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 max-w-[560px] md:max-w-[620px] lg:max-w-[680px] xl:max-w-[740px] mx-auto px-4 sm:px-6 flex flex-col items-center text-center"
+      >
         {/* Title (Heading M) */}
         <h2 className="section-title text-[#F5F5F6] text-center w-full">
           Unlock Your Potential as a <br className="hidden sm:inline" />
@@ -111,7 +148,7 @@ export default function CreatorCTASection() {
         >
           Join as Creator
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }

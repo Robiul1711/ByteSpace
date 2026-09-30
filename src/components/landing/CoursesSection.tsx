@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Star, BarChart2 } from "lucide-react";
 
 const filterTags = [
@@ -128,7 +129,13 @@ export default function CoursesSection() {
     <section className="relative w-full bg-white dark:bg-dark-bg pt-12 sm:pt-14 lg:pt-16 pb-20 sm:pb-24 lg:pb-28 overflow-hidden transition-colors duration-300">
       <div className="relative z-10 max-container section-padding-x">
         {/* ================= HEADER ================= */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center max-w-4xl mx-auto"
+        >
           <h2 className="section-title text-black dark:text-white">
             Discover Your Passion, <br className="hidden sm:inline" />
             Build Your Skills
@@ -139,10 +146,16 @@ export default function CoursesSection() {
             Explore a variety of courses across different fields, from technology
             to the arts, and make a difference in your career and life.
           </p>
-        </div>
+        </motion.div>
 
         {/* ================= CATEGORY FILTER PILLS ================= */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-4xl mx-auto mt-8 sm:mt-12">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 max-w-4xl mx-auto mt-8 sm:mt-12"
+        >
           {filterTags.map((tag) => {
             const isActive = activeTag === tag;
             const isMore = tag === "+ More";
@@ -163,14 +176,19 @@ export default function CoursesSection() {
               </button>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* ================= 6 COURSE CARDS GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-5 xl:gap-7 mt-12 sm:mt-16">
-          {courses.map((course) => (
-            <div
+          {courses.map((course, index) => (
+            <motion.div
               key={course.id}
-              className="card-surface p-4 sm:p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.6)] hover:-translate-y-1.5 duration-300 flex flex-col justify-between group cursor-pointer"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="card-surface p-4 sm:p-5 shadow-[0_4px_24px_rgba(0,0,0,0.03)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_16px_36px_rgba(0,0,0,0.08)] dark:hover:shadow-[0_16px_36px_rgba(0,0,0,0.6)] duration-300 flex flex-col justify-between group cursor-pointer"
             >
               <div>
                 {/* Course Image with Floating Translucent Badges */}
@@ -198,24 +216,24 @@ export default function CoursesSection() {
 
                 {/* Course Title & Rating Row */}
                 <div className="flex items-start justify-between gap-2 mt-2">
-                  <h3 className="font-poppins font-semibold text-base sm:text-[17px] xl:text-[19px] text-[#0A0D14] dark:text-white leading-[130%] group-hover:text-[#003BE2] dark:group-hover:text-[#CBFC01] transition-colors flex-1 line-clamp-1">
+                  <h3 className="font-poppins font-semibold text-base sm:text-[17px] xl:text-[19px] text-[#0A0D14] dark:text-white leading-[130%] group-hover:text-brand-blue dark:group-hover:text-brand-lime transition-colors flex-1 line-clamp-1">
                     {course.title}
                   </h3>
-                  <div className="flex items-center gap-1 text-[#525866] dark:text-zinc-400 font-poppins font-medium text-xs sm:text-sm shrink-0 pt-0.5">
+                  <div className="flex items-center gap-1 text-text-muted dark:text-zinc-400 font-poppins font-medium text-xs sm:text-sm shrink-0 pt-0.5">
                     <span>{course.rating}</span>
                     <Star className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-400 fill-amber-400" />
                   </div>
                 </div>
 
                 {/* Author Name */}
-                <p className="font-satoshi text-xs sm:text-sm text-[#003BE2] dark:text-[#6E95FF] font-medium mt-1">
+                <p className="font-satoshi text-xs sm:text-sm text-brand-blue dark:text-[#6E95FF] font-medium mt-1">
                   by {course.author}
                 </p>
 
                 {/* Level Tag & Enrolled Users Row */}
                 <div className="flex items-center justify-between gap-3 mt-4 pt-1">
                   {/* Beginner Badge */}
-                  <div className="inline-flex items-center gap-1.5 bg-[#F5F5F6] dark:bg-zinc-800 text-[#242528] dark:text-zinc-200 font-satoshi font-medium text-xs px-3.5 py-1.5 rounded-full">
+                  <div className="inline-flex items-center gap-1.5 bg-surface-light dark:bg-zinc-800 text-text-dark dark:text-zinc-200 font-satoshi font-medium text-xs px-3.5 py-1.5 rounded-full">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="16"
@@ -246,14 +264,14 @@ export default function CoursesSection() {
 
               {/* Price Row */}
               <div className="mt-5 pt-3 border-t border-zinc-100 dark:border-zinc-800/80 flex items-baseline">
-                <span className="text-[#003BE2] dark:text-[#CBFC01] font-poppins font-bold text-xl sm:text-2xl">
+                <span className="text-brand-blue dark:text-brand-lime font-poppins font-bold text-xl sm:text-2xl">
                   {course.price}
                 </span>
-                <span className="text-[#525866] dark:text-zinc-400 font-satoshi text-xs sm:text-sm font-normal ml-0.5">
+                <span className="text-text-muted dark:text-zinc-400 font-satoshi text-xs sm:text-sm font-normal ml-0.5">
                   {course.period}
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

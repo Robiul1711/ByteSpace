@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface StatItem {
   id: number;
@@ -136,7 +139,13 @@ export default function FeaturesSection() {
         {/* ================= ROW 1: Professional Growth ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Text & Stats */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 flex flex-col justify-center"
+          >
             <h2 className="text-text-dark dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
               Your Path to Professional Growth Starts Here!
             </h2>
@@ -151,21 +160,34 @@ export default function FeaturesSection() {
 
             {/* Stats Row */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-[420px] mt-8 sm:mt-10 pt-6">
-              {stats.map((stat) => (
-                <div key={stat.id} className="flex flex-col">
+              {stats.map((stat, idx) => (
+                <motion.div
+                  key={stat.id}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 0.2 + idx * 0.1 }}
+                  className="flex flex-col"
+                >
                   <span className="text-brand-blue dark:text-[#6493FF] font-poppins font-medium text-2xl sm:text-3xl lg:text-[36px] leading-[44px] tracking-[-0.36px]">
                     {stat.value}
                   </span>
                   <span className="text-text-muted dark:text-zinc-400 font-satoshi font-normal text-xs sm:text-sm md:text-base mt-1">
                     {stat.label}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Visual Showcase (577px x 540px) */}
-          <div className="lg:col-span-6 flex items-center justify-center relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, x: 20 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 flex items-center justify-center relative"
+          >
             <div className="relative w-full max-w-[577px] h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px]">
               <Image
                 src="/images/professionalGrowth.png"
@@ -175,13 +197,19 @@ export default function FeaturesSection() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* ================= ROW 2: Create & Manage Courses ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Visual Showcase (577px x 540px) */}
-          <div className="lg:col-span-6 order-2 lg:order-1 flex items-center justify-center relative">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.94, x: -20 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 order-2 lg:order-1 flex items-center justify-center relative"
+          >
             <div className="relative w-full max-w-[577px] h-[340px] sm:h-[420px] md:h-[480px] lg:h-[540px]">
               <Image
                 src="/images/create-and-manage.png"
@@ -191,10 +219,16 @@ export default function FeaturesSection() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Text & Feature Checklist */}
-          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-center lg:pl-6">
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-center lg:pl-6"
+          >
             <h2 className="text-text-dark dark:text-white font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.44px] max-w-[560px]">
               Create & Manage <br className="hidden sm:inline" />
               Courses Easily.
@@ -209,17 +243,24 @@ export default function FeaturesSection() {
             {/* Checklist Items */}
             <div className="space-y-4 sm:space-y-5">
               {checkListItems.map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3.5">
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, x: 15 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.15 + idx * 0.08 }}
+                  className="flex items-center gap-3.5"
+                >
                   <div className="w-5 h-5 rounded-full bg-brand-blue dark:bg-brand-lime flex items-center justify-center shrink-0">
                     <Check className="w-3 h-3 text-white dark:text-black stroke-[3]" />
                   </div>
                   <span className="text-[#0A0D14] dark:text-zinc-200 font-satoshi font-medium text-base sm:text-[18px] leading-[140%]">
                     {item}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
       </div>
