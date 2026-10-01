@@ -1,138 +1,168 @@
-# 🚀 ByteSpace - Modern E-Learning & Course Platform
+🚀 ByteSpace — Modern E-Learning & Course Platform
 
-A pixel-perfect, highly responsive, and interactive Landing Page & Authentication platform built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
+ByteSpace is a modern, responsive, and interactive e-learning platform built with Next.js 16, React 19, TypeScript, Tailwind CSS, and Framer Motion.
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://byte-space-ashiq.vercel.app)
-[![Pull Request](https://img.shields.io/badge/Pull_Request-PR_%231-238636?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Robiul1711/ByteSpace/pull/1)
-[![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+The project focuses on a clean and engaging learning experience with a modern landing page, course catalog, authentication interface, interactive animations, testimonials, theme switching, and responsive design.
 
 ---
 
-## 🌐 Live Preview
+Live Links
 
-- **Production URL:** [https://byte-space-ashiq.vercel.app](https://byte-space-ashiq.vercel.app)
-- **GitHub Repository:** [https://github.com/Robiul1711/ByteSpace](https://github.com/Robiul1711/ByteSpace)
-- **Working Branch:** [`feature/bytespace-landing-auth`](https://github.com/Robiul1711/ByteSpace/tree/feature/bytespace-landing-auth)
-
----
-
-## 🌟 Key Features
-
-### 1. 🎨 Dynamic & Animated Hero Section
-- **Custom Vector SVG Arc Sweep:** Smooth `pathLength` vector drawing animation curving seamlessly from bottom-left across the apex to bottom-right.
-- **Coordinated Staggered Entrance:** Sequenced reveals for headlines, search pill, student showcase, floating metric badges, and 3D shapes.
-- **Zero CLS (Cumulative Layout Shift):** Intrinsic aspect-ratio space reservation prevents any layout jumping during hydration and image loading.
-- **Edge-Floating 3D Elements:** Ambient floating micro-animations on decorative spring, torus, cylinder, and cone geometries.
-
-### 2. 🏢 Logo Cloud / Brand Partners
-- Dynamic brand partner ticker with slow, silky blur-flip transitions between partner sets.
-
-### 3. 📚 Course Catalog & Category Explorer
-- High-conversion course cards with rating metrics, instructor avatars, dynamic pricing, and tag filters.
-- Curated learning paths for Development, Design, Business, and Marketing.
-
-### 4. 💎 Features Bento Grid & Testimonials
-- Interactive feature matrix highlighting interactive courses, mentor support, and certification perks.
-- Social proof testimonial cards with student feedback and avatar stacks.
-
-### 5. 🔐 Authentication Pages (Bonus Extra Credit)
-- **Login (`/login`):** Clean authentication form with password visibility toggle, remember-me checkbox, and social SSO buttons.
-- **Signup (`/signup`):** Full onboarding form with input validation, terms confirmation, and seamless redirection.
-
-### 6. 🌓 Theme System (Dark / Light Mode)
-- Full dark & light theme support powered by `next-themes` with persistent state across sessions.
+- Live Demo: https://byte-space-ashiq.vercel.app
+- Repository: https://github.com/Robiul1711/ByteSpace
+- Pull Request: https://github.com/Robiul1711/ByteSpace/pull/1
 
 ---
 
-## 🛠️ Tech Stack & Engineering Decisions
+Features
 
-| Category | Technology | Rationale |
-| :--- | :--- | :--- |
-| **Framework** | Next.js 16 (App Router) | Server-Side Rendering (SSR), optimal SEO, and Turbopack build engine. |
-| **Language** | TypeScript (Strict Mode) | Full type-safety, maintainable interfaces, and clean component contracts. |
-| **Styling** | Tailwind CSS & CSS Variables | Utility-first styling with custom design tokens for typography & colors. |
-| **Animations** | Framer Motion | Hardware-accelerated transitions, SVG path drawing, and scroll triggers. |
-| **Icons** | Lucide React | Lightweight, consistent, and accessible SVG icon set. |
-| **Deployment**| Vercel | Instant global edge CDN distribution with automated CI/CD pipelines. |
+Dynamic Landing Page
+
+- Pixel-perfect and responsive UI
+- Dynamic hero section
+- Smooth SVG path drawing animation
+- Staggered entrance animations
+- Ambient floating 3D elements
+- Optimized layout to minimize cumulative layout shift
+- Responsive navigation and footer
+
+Brand Partners
+
+- Animated partner logo ticker
+- Smooth infinite scrolling animation
+- Responsive logo presentation
+
+Course Catalog
+
+- Dynamic course cards
+- Course ratings
+- Instructor information
+- Dynamic pricing
+- Course category filtering
+
+Available categories:
+
+- Development
+- Design
+- Business
+- Marketing
+
+Features & Testimonials
+
+- Bento-style feature grid
+- Platform feature highlights
+- Student testimonials
+- Responsive testimonial sections
+- Interactive UI elements
+
+Authentication
+
+- Login page
+- Sign Up page
+- Form validation
+- Social SSO options
+- Responsive authentication layouts
+
+Routes:
+
+/login
+/signup
+
+Theme Switcher
+
+- Dark mode
+- Light mode
+- Persistent theme state
+- Smooth theme switching
 
 ---
 
-## 📁 Project Architecture
+Architecture
 
-```
+ByteSpace uses the Next.js App Router with a hybrid Server-Side and Client-Side architecture.
+
+Server-Side
+
+Next.js Server Components are used for content that does not require browser-side interaction.
+
+- Rendering static and SEO-focused content
+- Generating the initial page structure
+- Handling page metadata
+- Improving initial page loading
+- Reducing unnecessary client-side JavaScript
+- Delivering optimized server-rendered content
+
+Client-Side
+
+Client Components are used where user interaction, browser APIs, or dynamic UI state are required.
+
+- Theme switching
+- Course filtering
+- Form interactions
+- Authentication UI
+- Interactive navigation
+- Framer Motion animations
+- Client-side UI state
+- Browser-based interactions
+
+This hybrid approach keeps the application performant and SEO-friendly while providing smooth client-side interactions where needed.
+
+---
+
+Tech Stack
+
+Frontend
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+
+Architecture
+
+- Next.js App Router
+- Server Components
+- Client Components
+- Component-based architecture
+
+Deployment
+
+- Vercel
+
+---
+
+Project Structure
+
+```text
 ByteSpace/
+│
 ├── public/
-│   └── images/               # Optimized SVG shapes, logos, and raster assets
+│   └── images/
+│       └── SVG shapes, logos, and image assets
+│
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx        # Root layout with fonts, metadata, and ThemeProvider
-│   │   ├── page.tsx          # Main Landing Page composition
-│   │   ├── globals.css       # Tailwind directives & design token variables
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── globals.css
+│   │   │
 │   │   ├── login/
-│   │   │   └── page.tsx      # Sign In page
+│   │   │   └── page.tsx
+│   │   │
 │   │   └── signup/
-│   │       └── page.tsx      # Sign Up page
+│   │       └── page.tsx
+│   │
 │   ├── components/
 │   │   ├── common/
-│   │   │   └── ThemeToggle.tsx # Dark/Light theme switcher
 │   │   ├── landing/
-│   │   │   ├── HeroSection.tsx
-│   │   │   ├── LogoBar.tsx
-│   │   │   ├── CategoriesSection.tsx
-│   │   │   ├── CoursesSection.tsx
-│   │   │   ├── FeaturesSection.tsx
-│   │   │   ├── TestimonialsSection.tsx
-│   │   │   └── CreatorCTASection.tsx
 │   │   ├── layout/
-│   │   │   ├── Navbar.tsx
-│   │   │   └── Footer.tsx
 │   │   └── providers/
-│   │       └── ThemeProvider.tsx
-```
-
----
-
-## ⚡ Getting Started Locally
-
-### Prerequisites
-- Node.js 18.17+ or 20+
-- npm, pnpm, or yarn
-
-### 1. Clone the Repository
-```bash
-git clone https://github.com/Robiul1711/ByteSpace.git
-cd ByteSpace
-```
-
-### 2. Switch to Working Branch
-```bash
-git checkout feature/bytespace-landing-auth
-```
-
-### 3. Install Dependencies
-```bash
-npm install
-```
-
-### 4. Run Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 5. Build for Production
-```bash
-npm run build
-npm run start
-```
-
----
-
-## 👨‍💻 Candidate Information
-
-- **Name:** Robiul Islam Ashiq
-- **Position Applied:** Jr. Software Engineer (Frontend)
-- **Live Submission:** [https://byte-space-ashiq.vercel.app](https://byte-space-ashiq.vercel.app)
-- **Pull Request:** [#1 - Feature Landing & Auth](https://github.com/Robiul1711/ByteSpace/pull/1)
+│   │
+│   └── ...
+│
+├── package.json
+├── tsconfig.json
+├── next.config.ts
+└── README.md
