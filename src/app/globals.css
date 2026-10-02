@@ -1,26 +1,197 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,800,700,500,400,300&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-satoshi: 'Satoshi', sans-serif;
+  --font-poppins: var(--font-poppins), sans-serif;
+
+  /* Brand Colors */
+  --color-brand-blue: #003BE2;
+  --color-brand-blue-deep: #002FB5;
+  --color-brand-lime: #CBFC01;
+
+  /* Text Colors */
+  --color-text-dark: #242528;
+  --color-text-body: #4F4F4F;
+  --color-text-muted: #525866;
+
+  /* Surface & Background Colors */
+  --color-surface-light: #F5F5F6;
+  --color-dark-bg: #07090E;
+  --color-dark-surface: #0C101A;
+  --color-dark-navy: #050B1E;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-satoshi: 'Satoshi', sans-serif;
+  --brand-blue: #003BE2;
+  --brand-blue-deep: #002FB5;
+  --brand-lime: #CBFC01;
+  --text-dark: #242528;
+  --text-body: #4F4F4F;
+  --text-muted: #525866;
+  --surface-light: #F5F5F6;
+  --dark-bg: #07090E;
+  --dark-surface: #0C101A;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-satoshi), sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Responsive Section Padding Utilities */
+.section-padding-x {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.section-padding-y {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 650px) {
+  .section-padding-x {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .section-padding-y {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .section-padding-x {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .section-padding-y {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .section-padding-x {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  .section-padding-y {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.max-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Blueprint Grid Background - Light: Electric Royal Blue (#003BE2) | Dark: Deep Midnight Navy (#050B1E) */
+.bg-hero-grid {
+  background-color: #003BE2;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 76px 76px;
+  transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.dark .bg-hero-grid,
+:where(.dark, .dark *) .bg-hero-grid {
+  background-color: #050B1E;
+  background-image: 
+    linear-gradient(rgba(80, 130, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 130, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 59, 226, 0.28) 0%, transparent 80%);
+  background-size: 76px 76px, 76px 76px, 100% 100%;
+}
+
+
+
+/* Custom Ultra-Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #080a0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #232d3b;
+  border-radius: 999px;
+}
+
+/* ================= REUSABLE COMMON UTILITIES ================= */
+.section-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -0.44px;
+  font-size: 1.875rem;
+}
+@media (min-width: 640px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .section-title {
+    font-size: 44px;
+  }
+}
+
+.section-desc {
+  font-family: var(--font-satoshi);
+  font-weight: 400;
+  line-height: 160%;
+  font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+  .section-desc {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .section-desc {
+    font-size: 18px;
+  }
+}
+
+.btn-primary {
+  background-color: #CBFC01;
+  color: #000;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.card-surface {
+  background-color: #ffffff;
+  border: 1px solid rgba(233, 235, 239, 0.8);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+.dark .card-surface,
+:where(.dark, .dark *) .card-surface {
+  background-color: #0C101A;
+  border-color: rgba(39, 39, 42, 0.8);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #03f769;
 }

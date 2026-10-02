@@ -1,0 +1,183 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  avatar: string;
+  quote: string;
+}
+
+const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Sarah M.",
+    role: "Enthusiastic Learner",
+    avatar: "/images/testimonial/sara.png",
+    quote:
+      "ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.",
+  },
+  {
+    id: 2,
+    name: "James L.",
+    role: "Lifelong Learner",
+    avatar: "/images/testimonial/jems.png",
+    quote:
+      "I've explored various online platforms, and ByteSpace stands out for its vibrant community and comprehensive courses. The interactive features and engaging content make the learning experience enjoyable and fulfilling. Highly recommended!",
+  },
+  {
+    id: 3,
+    name: "Alex B.",
+    role: "Inspired Creator",
+    avatar: "/images/testimonial/alex.png",
+    quote:
+      "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally.",
+  },
+];
+
+export default function TestimonialsSection() {
+  return (
+    <section className="relative w-full overflow-hidden bg-white dark:bg-dark-bg section-padding-y transition-colors duration-300">
+      {/* ================= LIGHT MODE GRADIENTS (Figma exact) ================= */}
+      <div className="dark:hidden">
+        {/* 1. Left Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-[350px] -left-[350px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(0, 59, 226, 0.24) 0%, rgba(0, 59, 226, 0.06) 53%, rgba(0, 59, 226, 0.01) 75%, rgba(0, 59, 226, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
+
+        {/* 2. Middle Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-[180px] left-1/2 -translate-x-1/2 w-[672px] h-[672px] rounded-[672px] -z-0 opacity-80"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.60) 0%, rgba(203, 252, 1, 0.14) 53%, rgba(203, 252, 1, 0.04) 75%, rgba(203, 252, 1, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
+
+        {/* 3. Right Gradient Glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-[350px] -right-[300px] w-[1137px] h-[1137px] rounded-[1137px] -z-0 opacity-90"
+          style={{
+            background:
+              "radial-gradient(50% 50% at 50% 50%, rgba(203, 252, 1, 0.40) 0%, rgba(203, 252, 1, 0.09) 53%, rgba(203, 252, 1, 0.02) 75%, rgba(203, 252, 1, 0.00) 100%)",
+            filter: "blur(20px)",
+          }}
+        />
+      </div>
+
+      {/* ================= DARK MODE AMBIENT NEON GLOWS (Futuristic / Cyber Aura) ================= */}
+      <div className="hidden dark:block">
+        {/* 1. Top-Center Lime/Cyan Aurora Aura */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[450px] rounded-full -z-0 opacity-30 blur-[110px]"
+          style={{
+            background: "radial-gradient(ellipse, rgba(203, 252, 1, 0.5) 0%, rgba(0, 91, 255, 0.3) 50%, transparent 80%)",
+          }}
+        />
+
+        {/* 2. Bottom-Left Deep Electric Blue Orb */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-32 -left-28 w-[650px] h-[650px] rounded-full -z-0 opacity-45 blur-[120px]"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 59, 226, 0.8) 0%, rgba(0, 39, 180, 0.25) 50%, transparent 80%)",
+          }}
+        />
+
+        {/* 3. Top-Right Cyan Backlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute top-10 -right-20 w-[550px] h-[550px] rounded-full -z-0 opacity-35 blur-[100px]"
+          style={{
+            background: "radial-gradient(circle, rgba(0, 150, 255, 0.6) 0%, rgba(0, 59, 226, 0.2) 50%, transparent 80%)",
+          }}
+        />
+      </div>
+
+      {/* Main Content Container (1440px frame with 120px padding) */}
+      <div className="relative z-10 max-container section-padding-x">
+        {/* Top Header Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-10 mb-12 sm:mb-16"
+        >
+          <div className="w-full lg:max-w-[577px]">
+            <h2 className="section-title text-black dark:text-white">
+              Discover What Our <br className="hidden sm:inline" />
+              Community Is Saying
+            </h2>
+          </div>
+          <div className="w-full lg:max-w-[580px]">
+            <p className="section-desc text-text-body dark:text-zinc-400">
+              At ByteSpace, our vibrant community of learners and creators is at
+              the heart of what we do. Hear directly from those who have
+              experienced the transformative journey of learning and creating on
+              our platform. Explore testimonials that reflect the diverse
+              perspectives of enthusiastic learners and accomplished creators.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Testimonials 3 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {testimonials.map((item, index) => (
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="card-surface p-6 sm:p-8 shadow-[0_4px_24px_rgba(0,0,0,0.02)] dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.06)] dark:hover:shadow-[0_12px_32px_rgba(203,252,1,0.06)] dark:hover:border-zinc-700 duration-300 flex flex-col justify-between"
+            >
+              <div>
+                {/* User Avatar */}
+                <div className="relative w-14 h-14 rounded-full overflow-hidden mb-5 shrink-0 border border-zinc-100 dark:border-zinc-800">
+                  <Image
+                    src={item.avatar}
+                    alt={item.name}
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+
+                {/* Author Name */}
+                <h3 className="text-black dark:text-white font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.2px]">
+                  {item.name}
+                </h3>
+
+                {/* Subtitle / Role */}
+                <p className="text-brand-blue dark:text-[#6E95FF] font-satoshi font-normal text-base sm:text-[18px] leading-[160%] mt-1 mb-5">
+                  {item.role}
+                </p>
+
+                {/* Testimonial Quote */}
+                <p className="text-text-body dark:text-zinc-300 font-satoshi font-normal text-sm md:text-base leading-[160%]">
+                  &ldquo;{item.quote}&rdquo;
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
