@@ -25,7 +25,6 @@ export default function Home() {
       {/* Categories / Learning Paths Section */}
       <CategoriesSection />
 
-
       {/* Value Proposition / Features Section */}
       <FeaturesSection />
 
@@ -40,5 +39,3 @@ export default function Home() {
     </main>
   );
 }
-
-

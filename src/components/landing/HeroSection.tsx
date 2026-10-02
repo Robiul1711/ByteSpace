@@ -1,12 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Search, Star } from "lucide-react";
 
 export default function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("");
+
+  // Prevent browser from restoring scrolled down position on reload
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+
+      return () => {
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "auto";
+        }
+      };
+    }
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
